@@ -1,0 +1,90 @@
+/* General layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  height: auto; /* Change to auto to accommodate content */
+}
+
+/* Search and Filters section */
+.search-container,
+.filters-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* Reduce bottom margin */
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Search bar styling */
+.search-container .search-input {
+  width: 70%;
+  padding: 8px; /* Reduce padding */
+  font-size: 14px; /* Smaller font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+}
+
+.search-button {
+  padding: 8px 15px; /* Reduce padding */
+  font-size: 14px; /* Smaller font size */
+  background-color: #00a1d6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px; /* Reduce margin */
+}
+
+.search-button:hover {
+  background-color: #008db4;
+}
+
+/* Filters section */
+.filters-container input,
+.filters-container select {
+  padding: 8px; /* Reduce padding */
+  margin: 0 5px; /* Reduce margin */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px; /* Smaller font size */
+  width: 120px; /* Fixed width to minimize space usage */
+}
+
+.filters-container input:focus,
+.filters-container select:focus {
+  border-color: #00a1d6;
+  outline: none;
+}
+
+/* Chart section */
+.chart-container {
+  background-color: white;
+  padding: 15px; /* Reduce padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+}
+
+.chart-container h3 {
+  font-size: 20px; /* Smaller font size */
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px; /* Reduce bottom margin */
+}
+
+@media (max-width: 768px) {
+  .filters-container input,
+  .filters-container select {
+    width: 40%; /* Increase width on smaller screens */
+    margin: 5px;
+  }
+  .search-container .search-input {
+    width: 70%;
+  }
+}
