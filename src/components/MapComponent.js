@@ -30,6 +30,14 @@ const position = {
   lat: 23.481411, // 23°28'53.08"N
   lng: 85.447336, // 85°26'50.41"E
 };
+const position11 = {
+  lat: 23.5301, // 23°28'53.08"N
+  lng:  85.4392, // 85°26'50.41"E
+};
+const position12 = {
+  lat: 23.52466, // 23°28'53.08"N
+  lng: 85.43665, // 85°26'50.41"E
+};
 const position1 = {
   lat: 23.442283,  // 23°26'32.18"N
     lng: 85.460815,// 85°26'50.41"E
@@ -554,7 +562,54 @@ const newPolygonCoords22 = [
   {lat: 23.52804315737338, lng: 85.44017990798274}
 
 ];
+const newPolygonCoords23 = [
+  { lat: 23.52804315737338, lng: 85.44017990798274 },
+  { lat: 23.52780140477173, lng: 85.44030167040818 },
+  { lat: 23.52807500838689, lng: 85.44057425123884 },
+  { lat: 23.52827864364762, lng: 85.44039666986578 },
+  { lat: 23.52804315737338, lng: 85.44017990798274 }
 
+];
+const newPolygonCoords24 = [
+  { lat: 23.52804315737338, lng: 85.44017990798274 },
+  { lat: 23.52780140477173, lng: 85.44030167040818 },
+  { lat: 23.52807500838689, lng: 85.44057425123884 },
+  { lat: 23.52827864364762, lng: 85.44039666986578 },
+  { lat: 23.52804315737338, lng: 85.44017990798274 }
+
+];
+const newPolygonCoords25 = [
+  { lat: 23.52681702537276, lng: 85.43988779688821 },
+    { lat: 23.52697658627157, lng: 85.44013806212624 },
+    { lat: 23.5275271421269, lng: 85.43980666887292 },
+    { lat: 23.52716191161934, lng: 85.43966803247551 },
+    { lat: 23.52681702537276, lng: 85.43988779688821 }
+
+];
+const newPolygonCoords26 = [
+  { lat: 23.52681702537276, lng: 85.43988779688821 },
+    { lat: 23.52697658627157, lng: 85.44013806212624 },
+    { lat: 23.5275271421269, lng: 85.43980666887292 },
+    { lat: 23.52716191161934, lng: 85.43966803247551 },
+    { lat: 23.52681702537276, lng: 85.43988779688821 }
+
+];
+const newPolygonCoords27 = [
+  { lat: 23.52754499642407, lng: 85.44037424747006 },
+  { lat: 23.52727014223357, lng: 85.44000979545015 },
+  { lat: 23.52693132663491, lng: 85.44026845427433 },
+  { lat: 23.52722626603408, lng: 85.4405889194331 },
+  { lat: 23.52754499642407, lng: 85.44037424747006 }
+
+];
+const newPolygonCoords28 = [
+  { lat: 23.52754499642407, lng: 85.44037424747006 },
+  { lat: 23.52727014223357, lng: 85.44000979545015 },
+  { lat: 23.52693132663491, lng: 85.44026845427433 },
+  { lat: 23.52722626603408, lng: 85.4405889194331 },
+  { lat: 23.52754499642407, lng: 85.44037424747006 }
+
+];
 //feild 7
 const newPolygonCoords8 = [
   {lat: 23.4425302723415, lng: 85.46062193695269},
@@ -651,6 +706,12 @@ const dottedLinePath = [
   { lat: 23.481411, lng: 85.447336 },  // Start coordinate
   { lat: 23.452764714147097, lng: 85.43991014232856},  // End coordinate
 ];
+
+const dottedLinePath1 = [
+  { lat: 23.5301, lng:85.4392 },  // Start coordinate
+  { lat: 23.52466, lng: 85.43665},  // End coordinate
+];
+
 // Styling options for the dotted polyline
 const dottedLineOptions = {
   strokeOpacity: 0, // Hide default stroke
@@ -718,6 +779,26 @@ const sampleCropInfo2 = {
    // URL to the crop photo
 
 };
+const sampleCropInfo3 = {
+  name: 'Dileshwer Mahto',
+  crop: 'Peas',
+  shownDate: '2024-09-25',
+  harvestDate: '2024-12-01',
+  quantity: '1 Tons',
+  confScore: '92%',
+   // URL to the crop photo
+
+};
+const sampleCropInfo4 = {
+  name: 'Basudeo Mahto',
+  crop: 'Onion',
+  shownDate: '2024-09-25',
+  harvestDate: '2024-12-01',
+  quantity: '80 Kg',
+  confScore: '94%',
+   // URL to the crop photo
+
+};
 const calculateCentroid = (coords) => {
   let latSum = 0;
   let lngSum = 0;
@@ -740,7 +821,7 @@ const calculateCentroid = (coords) => {
 const MapComponent = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "",
+    googleMapsApiKey: " AIzaSyChN074R5gt4BfPTFox9UXnND0S8yyH6Dk",
   });
   
  // const [selectedMarker, setSelectedMarker] = useState(null);
@@ -845,6 +926,7 @@ const [cropInfo11, setCropInfo11] = useState({});
 />
 
 <Polyline path={dottedLinePath} options={dottedLineOptions} />
+<Polyline path={dottedLinePath1} options={dottedLineOptions} />
 
 {/* Ormanjhi */}
 <PolygonF
@@ -953,6 +1035,48 @@ onClick={() => {
    } : undefined} // Show text on hover
  />
 )}
+
+{/* New Office */}
+
+{markerPosition && (
+   <Marker
+   position={position11}
+   onMouseOver={() => setSelected(markerPosition)} // Show info on marker hover
+   onMouseOut={() => setSelected(null)} // Hide info when not hovering
+   icon={{
+    url: office, // Path to your custom image
+    scaledSize: new window.google.maps.Size(40, 40), // Adjust size as needed
+  }}
+   label={selected === markerPosition ? {
+     text: 'Office',
+     color: 'purple',
+     fontSize: '10px',
+     fontWeight: 'bold',
+     className: 'blinking-label', // Apply blinking effect
+   } : undefined} // Show text on hover
+ />
+)}
+{/* New Market */}
+
+{markerPosition && (
+   <Marker
+   position={position12}
+   onMouseOver={() => setSelected(markerPosition)} // Show info on marker hover
+   onMouseOut={() => setSelected(null)} // Hide info when not hovering
+   icon={{
+    url: market, // Path to your custom image
+    scaledSize: new window.google.maps.Size(40, 40), // Adjust size as needed
+  }}
+   label={selected === markerPosition ? {
+     text: 'Market',
+     color: 'red',
+     fontSize: '10px',
+     fontWeight: 'bold',
+     className: 'blinking-label', // Apply blinking effect
+   } : undefined} // Show text on hover
+ />
+)}
+
 {/* Marker for Office
   <MarkerF
         position={calculateCentroid(newPolygonCoords2)}
@@ -1343,68 +1467,176 @@ onClick={() => {
 <PolygonF
         paths={newPolygonCoords16}
         options={{
-          fillColor: '',  // Lavender
-          strokeColor: "Transparent",  // Medium Purple
-          fillOpacity: 0.5,
-          strokeWeight: 1,
+          fillColor: 'transparent',  // Pale Green
+          strokeColor: '#ffc000',  // Dark Green
+          fillOpacity: 0.1977,
         }}
         onClick={() => {
           console.log("New Polygon 2 clicked");
           handlePolygonClick(newPolygonCoords16, 9);
         }}
       />
+
+
 <PolygonF
-        paths={newPolygonCoords17}
-        options={{
-          fillColor: 'Green',  // Lavender
-          strokeColor: "Green",  // Medium Purple
-          fillOpacity: 0.5,
-          strokeWeight: 1,
-        }}
-        onClick={() => {
-          console.log("New Polygon 2 clicked");
-          handlePolygonClick(newPolygonCoords17, 9);
-        }}
+  paths={newPolygonCoords17}
+  options={{
+    fillColor: '#88a561',  // Light Pink
+    strokeColor: 'Golden',  // Hot Pink
+    fillOpacity: 0.5,
+    strokeWeight: 1,
+  }}
+  onMouseOver={() => {
+    setIsHovered(true);
+     // Set position to centroid
+    setCropInfo(sampleCropInfo3); // Set crop info on hover
+  }}// Set to true on hover
+  onMouseOut={() => {
+    setIsHovered(false);
+    setCropInfo({}); // Clear crop info on mouse out
+  }}
+  onClick={() => {
+    console.log("New Polygon 17 clicked");
+    handlePolygonClick(newPolygonCoords17);
+  }}
+
+/>
+{isHovered && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '70%', // Adjust based on your map's coordinates
+            left: '75%',
+            transform: 'translate(-50%, -100%)', // Center the card above the polygon
+            padding: '10px',
+            backgroundColor: 'white',
+            borderRadius: '13%' ,
+            background:'smoke white',
+            border: '1px solid black',
+            boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
+            zIndex: 1000, // Ensure it's above other elements
+          }}
+        >
+          
+          <div className='first' style={{ textAlign: 'center' }}>
+      <img
+        src={cart}
+        alt="Cart Icon"
+        style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '50%',marginLeft:'50px',marginRight:'30px' }} // Adjust size as needed
       />
-      <PolygonF
-        paths={newPolygonCoords18}
-        options={{
-          fillColor: 'Green',  // Lavender
-          strokeColor: "Green",  // Medium Purple
-          fillOpacity: 0.5,
-          strokeWeight: 1,
-        }}
-        onClick={() => {
-          console.log("New Polygon 2 clicked");
-          handlePolygonClick(newPolygonCoords18, 9);
-        }}
+       <img
+        src={code2} // Change this to the correct image for polygon 12
+        alt="Cart Icon"
+        style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10%',  }}
       />
+    </div>
+    <hr/>
+   
+         <h5>Name: {cropInfo.name} </h5>
+         <h5>Crop: {cropInfo.crop} </h5>
+         <h5>Shown Date:{cropInfo.shownDate} </h5>
+         <h5>Harvest Date:{cropInfo.harvestDate} </h5>
+         <h5>Quantity: {cropInfo.quantity} </h5>
+         <h5>Conf. Score : {cropInfo.confScore}</h5>
+        </div>
+      )}
+   
+
+   <PolygonF
+  paths={newPolygonCoords18}
+  options={{
+    fillColor: '#88a561',  // Light Pink
+    strokeColor: 'Golden',  // Hot Pink
+    fillOpacity: 0.5,
+    strokeWeight: 1,
+  }}
+  onMouseOver={() => {
+    setIsHovered(true);
+     // Set position to centroid
+    setCropInfo(sampleCropInfo4); // Set crop info on hover
+  }}// Set to true on hover
+  onMouseOut={() => {
+    setIsHovered(false);
+    setCropInfo({}); // Clear crop info on mouse out
+  }}
+  onClick={() => {
+    console.log("New Polygon 13 clicked");
+    handlePolygonClick(newPolygonCoords18);
+  }}
+
+/>
+{isHovered && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '70%', // Adjust based on your map's coordinates
+            left: '75%',
+            transform: 'translate(-50%, -100%)', // Center the card above the polygon
+            padding: '10px',
+            backgroundColor: 'white',
+            borderRadius: '13%' ,
+            background:'smoke white',
+            border: '1px solid black',
+            boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
+            zIndex: 1000, // Ensure it's above other elements
+          }}
+        >
+          
+          <div className='first' style={{ textAlign: 'center' }}>
+      <img
+        src={cart}
+        alt="Cart Icon"
+        style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '50%',marginLeft:'50px',marginRight:'30px' }} // Adjust size as needed
+      />
+       <img
+        src={code2} // Change this to the correct image for polygon 12
+        alt="Cart Icon"
+        style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10%',  }}
+      />
+    </div>
+    <hr/>
+   
+         <h5>Name: {cropInfo.name} </h5>
+         <h5>Crop: {cropInfo.crop} </h5>
+         <h5>Shown Date:{cropInfo.shownDate} </h5>
+         <h5>Harvest Date:{cropInfo.harvestDate} </h5>
+         <h5>Quantity: {cropInfo.quantity} </h5>
+         <h5>Conf. Score : {cropInfo.confScore}</h5>
+        </div>
+      )}
+   
+
+
+
+
+      
+      
+   <PolygonF
+  paths={newPolygonCoords19}
+  options={{
+    fillColor: '#BC3F4A',  // Navajo White
+    strokeColor: strokeColor,  // Peru
+    fillOpacity: 0.5,
+    strokeWeight: 3,
+  }}
+  onClick={() => {
+    console.log("New Polygon 19 clicked");
+    handlePolygonClick(newPolygonCoords19);
+  }}
+/>
 <PolygonF
-        paths={newPolygonCoords19}
-        options={{
-          fillColor: 'Green',  // Lavender
-          strokeColor: "Green",  // Medium Purple
-          fillOpacity: 0.5,
-          strokeWeight: 1,
-        }}
-        onClick={() => {
-          console.log("New Polygon 2 clicked");
-          handlePolygonClick(newPolygonCoords19, 9);
-        }}
-      />
-      <PolygonF
-        paths={newPolygonCoords20}
-        options={{
-          fillColor: 'Green',  // Lavender
-          strokeColor: "Green",  // Medium Purple
-          fillOpacity: 0.5,
-          strokeWeight: 1,
-        }}
-        onClick={() => {
-          console.log("New Polygon 2 clicked");
-          handlePolygonClick(newPolygonCoords20, 9);
-        }}
-      />
+  paths={newPolygonCoords20}
+  options={{
+    fillColor: '#BC3F4A',  // Navajo White
+    strokeColor: strokeColor,  // Peru
+    fillOpacity: 0.5,
+    strokeWeight: 3,
+  }}
+  onClick={() => {
+    console.log("New Polygon 20 clicked");
+    handlePolygonClick(newPolygonCoords20);
+  }}
+/>
 <PolygonF
         paths={newPolygonCoords21}
         options={{
@@ -1421,14 +1653,92 @@ onClick={() => {
       <PolygonF
         paths={newPolygonCoords22}
         options={{
-          fillColor: 'Green',  // Lavender
-          strokeColor: "Green",  // Medium Purple
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
           fillOpacity: 0.5,
           strokeWeight: 1,
         }}
         onClick={() => {
           console.log("New Polygon 2 clicked");
-          handlePolygonClick(newPolygonCoords19, 9);
+          handlePolygonClick(newPolygonCoords22, 9);
+        }}
+      />
+       <PolygonF
+        paths={newPolygonCoords23}
+        options={{
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
+          fillOpacity: 0.5,
+          strokeWeight: 1,
+        }}
+        onClick={() => {
+          console.log("New Polygon 2 clicked");
+          handlePolygonClick(newPolygonCoords23, 9);
+        }}
+      />
+     <PolygonF
+        paths={newPolygonCoords24}
+        options={{
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
+          fillOpacity: 0.5,
+          strokeWeight: 1,
+        }}
+        onClick={() => {
+          console.log("New Polygon 2 clicked");
+          handlePolygonClick(newPolygonCoords24, 9);
+        }}
+      />
+     <PolygonF
+        paths={newPolygonCoords25}
+        options={{
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
+          fillOpacity: 0.5,
+          strokeWeight: 1,
+        }}
+        onClick={() => {
+          console.log("New Polygon 2 clicked");
+          handlePolygonClick(newPolygonCoords25, 9);
+        }}
+      />
+      <PolygonF
+        paths={newPolygonCoords26}
+        options={{
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
+          fillOpacity: 0.5,
+          strokeWeight: 1,
+        }}
+        onClick={() => {
+          console.log("New Polygon 2 clicked");
+          handlePolygonClick(newPolygonCoords26, 9);
+        }}
+      />
+     <PolygonF
+        paths={newPolygonCoords27}
+        options={{
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
+          fillOpacity: 0.5,
+          strokeWeight: 1,
+        }}
+        onClick={() => {
+          console.log("New Polygon 2 clicked");
+          handlePolygonClick(newPolygonCoords27, 9);
+        }}
+      />
+      <PolygonF
+        paths={newPolygonCoords28}
+        options={{
+          fillColor: '#b5aa60',  // Powder Blue
+    strokeColor: '#ffc000',
+          fillOpacity: 0.5,
+          strokeWeight: 1,
+        }}
+        onClick={() => {
+          console.log("New Polygon 2 clicked");
+          handlePolygonClick(newPolygonCoords28, 9);
         }}
       />
      
