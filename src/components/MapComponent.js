@@ -821,7 +821,7 @@ const calculateCentroid = (coords) => {
 const MapComponent = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: " AIzaSyChN074R5gt4BfPTFox9UXnND0S8yyH6Dk",
+    googleMapsApiKey: "",
   });
   
  // const [selectedMarker, setSelectedMarker] = useState(null);
