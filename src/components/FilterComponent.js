@@ -3,13 +3,13 @@ import React from 'react';
 const FilterComponent = () => {
   return (
     <div>
-        <h3>40 animals</h3>
+        <h3>Welcome</h3>
         <select style={{marginLeft:'-7px',marginBottom:'50px',marginTop:'10px'}}>
         <option style={{marginRight:'4px'}}>Overview</option>
         {/* Add more grouping options here */}
       </select>
       <h4>Graph Explorer</h4>
-      <p>Select a section of any graph to isolate animals and view their details</p>
+      <p>Select a section of any graph to isolate crop and view their details</p>
 
       
       <button className='btn' style={{background:'blue',marginRight:'4px'}}>Explore</button>
