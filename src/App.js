@@ -15,6 +15,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Land from './components/Land';
 import Login from './components/Login'; // Import Login component
+import LoginRegistration from './components/LoginRegistration';
 import MapComponent from './components/MapComponent';
 import New from './components/New';
 import Profile from './components/Profile';
@@ -50,6 +51,7 @@ function App() {
         <Route path="/map" element={<MapComponent />} />
         <Route path="/New" element={<New />} />
         <Route path="/log" element={<Logins />} />
+        <Route path="/regi" element={<LoginRegistration />} />
         
         {/* Add login route for local authentication */}
         <Route path="/login" element={<Login />} />
